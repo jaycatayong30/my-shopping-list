@@ -1,82 +1,153 @@
-:root {
-  --dark-grey: #1b1b32;
-  --light-grey: #f5f6f7;
-  --dark-orange: #f89808;
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
+.dashboard-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  /* ITO ANG SIKRETO PARA MAGING CONSISTENT */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pantay sa gitna (vertical) */
+  align-items: center; /* Pantay sa gitna (horizontal) */
+  min-height: 200px; /* Lahat sila, ganito ang minimum height */
+  text-align: center;
+}
+
+.project-card h2,
+.project-card h3 {
+  margin: 0 0 10px 0; /* Fixed space sa ilalim ng title */
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--golden-yellow);
 }
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: var(--dark-grey);
-  background-color: var(--dark-grey);
+  margin: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
 }
 
-main,
-.container {
+.fcc-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.container {
-  background-color: var(--light-grey);
-  width: 90%;
-  margin: 20px;
-  padding: 10px;
+#toggle-container {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: var(--dark-grey);
+#toggle-button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-form {
+#toggle-button:hover {
+  background: #0056b3;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 1.125rem;
+  color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(30deg, #ff9999 50%, #6699ff 50%);
+}
+
+.form-wrap {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px black;
+}
+
+.form-wrap h2,
+.form-wrap p {
   text-align: center;
 }
 
-button {
+.form-wrap p {
+  position: relative;
+  top: -18px;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.submit-wrap {
+  text-align: center;
+}
+
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid black;
+}
+
+.submit-btn:hover {
   cursor: pointer;
+  background-color: #f3f3f3;
 }
 
-button {
-  cursor: pointer;
-  width: 100px;
-  margin: 3px;
-  color: var(--dark-grey);
-  background-color: var(--golden-yellow);
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border-color: var(--golden-yellow);
-  border-width: 3px;
-}
-
-button:hover {
-  background-image: linear-gradient(#ffcc4c, #f89808);
-}
-
-input {
-  color: var(--dark-grey);
-  margin-left: 5px;
-  padding: 3px;
-}
-
-li {
-  text-align: left;
-  margin: 10px 0;
-}
-
-.selected-item {
-  font-weight: bold;
-}
-
-@media (min-width: 425px) {
-  .container {
-    width: 400px;
-  }
+.submit-btn:disabled {
+  cursor: not-allowed;
 }

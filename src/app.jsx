@@ -1,73 +1,48 @@
-import React, { useState, useMemo, useCallback } from 'react'; // Import React hooks
-import './styles.css'; // Import your CSS
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import ShoppingList from "./components/ShoppingList";
+import { ToggleApp } from "./components/ToggleTextApp";
+import { FruitsSearch } from "./components/FruitSearchApp";
+import { SuperheroForm } from "./components/SuperHeroAppForm";
+import "./styles.css";
 
-const items = [
-  "Apples", "Bananas", "Strawberries", "Blueberries", "Mangoes",
-  "Pineapple", "Lettuce", "Broccoli", "Paper Towels", "Dish Soap",
-];
-
-let prevToggleItem = null;
-
-export default function App() { // Ginawa nating "App" ang name para standard
-  const [query, setQuery] = useState("");
-  const [selectedItems, setSelectedItems] = useState([]);
-
-  const filteredItems = useMemo(() => {
-    console.log("Filtering items...");
-    return items.filter((item) =>
-      item.toLowerCase().includes(query.toLowerCase())
-    );
-  }, [query]);
-
-  // Inayos natin yung missing "useCallback" na napansin natin kanina
-  const toggleItem = useCallback((item) => {
-    setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
-    );
-  }, [setSelectedItems]);
-
-  if (prevToggleItem !== toggleItem) {
-    console.log("New toggleItem function");
-    prevToggleItem = toggleItem;
-  } else {
-    console.log("Current toggleItem function");
-  }
-
-  return (
-    <div className="container">
-      <h1>Shopping List</h1>
-      <form onSubmit={(e) => e.preventDefault()}> {/* Added to prevent page refresh */}
-        <label htmlFor="search">Search for an item:</label>
-        <input
-          id="search"
-          type="search"
-          placeholder="Search..."
-          aria-describedby="search-description"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        /> 
-        <p id="search-description">Type to filter the list below:</p>
-        <ul>
-          {filteredItems.map((item) => {
-            const isChecked = selectedItems.includes(item);
-            return (
-              <li
-                key={item}
-                style={{ textDecoration: isChecked ? "line-through" : "none" }}
-              >
-                <label>
-                  <input
-                    type="checkbox"
-                    onChange={() => toggleItem(item)}
-                    checked={isChecked}
-                  />
-                  {item}
-                </label>
-              </li>
-            );
-          })}
-        </ul>
-      </form>
+const Dashboard = () => (
+  <div className="dashboard-wrapper">
+    <h1>freeCodeCamp Exercises</h1>
+    <div className="project-grid">
+      <Link to="/shopping-list" className="project-card">
+        <h2>Shopping List</h2>
+        <p>React State & Hooks Practice</p>
+      </Link>
+      <div className="project-grid">
+        <Link to="/toggle-app" className="project-card">
+          <h2>Toggle Text App</h2>
+          <p>Working with State and Responding to Events in React</p>
+        </Link>
+        <Link to="/fruits-search" className="project-card">
+          <h2>Fruits Search</h2>
+          <p>Understanding Effects and Referencing Values in React</p>
+        </Link>
+        <Link to="/superhero-form" className="project-card">
+          <h2>Superhero Form</h2>
+          <p>Working with Forms in React</p>
+        </Link>
+      </div>
     </div>
+  </div>
+);
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/shopping-list" element={<ShoppingList />} />
+        <Route path="/fruits-search" element={<FruitsSearch />} />
+        <Route path="/toggle-app" element={<ToggleApp />} />
+        <Route path="/superhero-form" element={<SuperheroForm />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
