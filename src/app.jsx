@@ -34,13 +34,19 @@ const Dashboard = () => (
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/shopping-list" element={<ShoppingList />} />
-        <Route path="/fruits-search" element={<FruitsSearch />} />
-        <Route path="/toggle-app" element={<ToggleApp />} />
-        <Route path="/superhero-form" element={<SuperheroForm />} />
-      </Routes>
+      <div className="app-layout">
+        <header className="app-header"></header>
+        <main className="app-main">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/shopping-list" element={<ShoppingList />} />
+            <Route path="/fruits-search" element={<FruitsSearch />} />
+            <Route path="/toggle-app" element={<ToggleApp />} />
+            <Route path="/superhero-form" element={<SuperheroForm />} />
+          </Routes>
+        </main>
+        <footer className="app-footer"></footer>
+      </div>
     </Router>
   );
 }
