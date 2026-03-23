@@ -77,7 +77,8 @@ export function CurrencyConverter() {
             ))}
           </select>
         </label>
-        <label>
+        <label 
+        onChange={(e) => setVal(e.target.value)}>
           Converted Amount: {conversion}
         </label>
       </div>
