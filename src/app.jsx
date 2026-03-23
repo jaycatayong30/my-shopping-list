@@ -3,6 +3,7 @@ import ShoppingList from "./components/ShoppingList";
 import { ToggleApp } from "./components/ToggleTextApp";
 import { FruitsSearch } from "./components/FruitSearchApp";
 import { SuperheroForm } from "./components/SuperHeroAppForm";
+import { CurrencyConverter } from "./components/CurrencyConverter";
 import "./styles.css";
 
 const Dashboard = () => (
@@ -26,6 +27,10 @@ const Dashboard = () => (
           <h2>Superhero Form</h2>
           <p>Working with Forms in React</p>
         </Link>
+        <Link to="/currency-converter" className="project-card">
+          <h2>Currency Converter</h2>
+          <p>React Strategies and Debugging</p>
+        </Link>
       </div>
     </div>
   </div>
@@ -43,6 +48,7 @@ function App() {
             <Route path="/fruits-search" element={<FruitsSearch />} />
             <Route path="/toggle-app" element={<ToggleApp />} />
             <Route path="/superhero-form" element={<SuperheroForm />} />
+            <Route path="/currency-converter" element={<CurrencyConverter />} />
           </Routes>
         </main>
         <footer className="app-footer"></footer>
