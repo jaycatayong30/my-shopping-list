@@ -46,6 +46,9 @@ export const SuperheroForm = () => {
               onChange={(e) => setHeroName(e.target.value)}
             />
           </label>
+
+          <br />
+
           <label>
             Real Name
             <input
@@ -54,6 +57,8 @@ export const SuperheroForm = () => {
               onChange={(e) => setRealName(e.target.value)}
             />
           </label>
+
+          <br />
         </div>
         <label className="section column">
           How did you get your powers?
@@ -69,6 +74,9 @@ export const SuperheroForm = () => {
             ))}
           </select>
         </label>
+
+        <br />
+
         <label className="section column">
           List your powers (select all that apply):
           {powersOptions.map((power) => (
@@ -79,10 +87,17 @@ export const SuperheroForm = () => {
                 checked={powers.includes(power)}
                 onChange={handlePowersChange}
               />
-              <span>{power}</span>
+              <span>
+                <br />
+                {power}
+              </span>
             </label>
           ))}
         </label>
+
+        <br />
+        <br />
+
         <button
           className="submit-btn"
           type="submit"
