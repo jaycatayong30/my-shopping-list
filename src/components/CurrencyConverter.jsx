@@ -19,33 +19,22 @@ export function CurrencyConverter() {
   const [startCurrency, setStartCurrency] = useState("");
   const [targetCurrency, setTargetCurrency] = useState("");
 
-  // ==========================================
-  // ANG FREECODECAMP MAGIC (useMemo)
-  // ==========================================
-  
-  // Requirement 5 & 6: I-compute lang kapag nagbago ang Start Currency (o Amount).
   const memoizedConversions = useMemo(() => {
-    // Kung walang startCurrency, ibalik lang ay blankong object
     if (startCurrency === "") return {};
 
     const rateFrom = exchangeRates[startCurrency];
     const computedList = {};
 
-    // Iko-compute na natin papunta sa LAHAT ng target currencies 
-    // at isi-save natin sa 'computedList' object.
     for (const currKey in exchangeRates) {
       const rateTo = exchangeRates[currKey];
       computedList[currKey] = (amount / rateFrom) * rateTo;
     }
 
-    return computedList; // Ito yung listahan na tatandaan ng React
+    return computedList; 
     
-  }, [amount, startCurrency]); // <- Dito natin sinabi na "amount" at "startCurrency" lang ang pwedeng mag-trigger ng computation!
+  }, [amount, startCurrency]); 
 
-  // Requirement 7 & 8: Kapag nagbago ang Target Currency, HUGUTIN na lang natin sa listahan (hindi tayo nag-compute ulit).
   const finalAmount = memoizedConversions[targetCurrency];
-
-  // ==========================================
 
   return (
     <div>
@@ -103,7 +92,7 @@ export function CurrencyConverter() {
 
         <label>
           Converted Amount:{" "}
-          {/* Requirement 9: Format XX.XX CCC */}
+
           {startCurrency === "" || targetCurrency === "" || finalAmount === undefined
             ? "Choose currency to convert."
             : `${finalAmount.toFixed(2)} ${targetCurrency}`}
