@@ -4,6 +4,7 @@ import { ToggleApp } from "./components/ToggleTextApp";
 import { FruitsSearch } from "./components/FruitSearchApp";
 import { SuperheroForm } from "./components/SuperHeroAppForm";
 import { CurrencyConverter } from "./components/CurrencyConverter";
+import { Board } from "./components/TicTacToeGameApp";
 import "./styles.css";
 
 const Dashboard = () => (
@@ -29,7 +30,11 @@ const Dashboard = () => (
         </Link>
         <Link to="/currency-converter" className="project-card">
           <h2>Currency Converter</h2>
-          <p>React Strategies and Debugging</p>
+          <p>React Strategies and Debugging (Part 1)</p>
+        </Link>
+        <Link to="/tic-tac-toe" className="project-card">
+          <h2>Tic Tac Toe</h2>
+          <p>React Strategies and Debugging (Part 2)</p>
         </Link>
       </div>
     </div>
@@ -49,6 +54,7 @@ function App() {
             <Route path="/toggle-app" element={<ToggleApp />} />
             <Route path="/superhero-form" element={<SuperheroForm />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />
+            <Route path="/tic-tac-toe" element={<Board />} />
           </Routes>
         </main>
         <footer className="app-footer"></footer>
