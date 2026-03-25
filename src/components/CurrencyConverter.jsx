@@ -16,8 +16,8 @@ const exchangeRates = {
 
 export function CurrencyConverter() {
   const [amount, setAmount] = useState(1);
-  const [startCurrency, setStartCurrency] = useState("");
-  const [targetCurrency, setTargetCurrency] = useState("");
+  const [startCurrency, setStartCurrency] = useState("USD");
+  const [targetCurrency, setTargetCurrency] = useState("PHP");
 
   const memoizedConversions = useMemo(() => {
     if (startCurrency === "") return {};
