@@ -5,6 +5,7 @@ import { FruitsSearch } from "./components/FruitSearchApp";
 import { SuperheroForm } from "./components/SuperHeroAppForm";
 import { CurrencyConverter } from "./components/CurrencyConverter";
 import { Board } from "./components/TicTacToeGameApp";
+import { Board } from "./components/TicTacToeGameApp";
 import "./styles.css";
 
 const Dashboard = () => (
