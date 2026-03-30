@@ -5,8 +5,8 @@ import { FruitsSearch } from "./components/FruitSearchApp";
 import { SuperheroForm } from "./components/SuperHeroAppForm";
 import { CurrencyConverter } from "./components/CurrencyConverter";
 import { Board } from "./components/TicTacToeGameApp";
-import { Board } from "./components/TicTacToeGameApp";
-import "./styles.css";
+import { CTAComponent } from "./components/CTAComponent";
+import { ErrorMessage } from "./components/ErrorMessageComponent";
 
 const Dashboard = () => (
   <div className="dashboard-wrapper">
@@ -37,6 +37,14 @@ const Dashboard = () => (
           <h2>Tic Tac Toe</h2>
           <p>React Strategies and Debugging (Part 2)</p>
         </Link>
+        <Link to="/cta" className="project-card">
+          <h2>Call to Action</h2>
+          <p>Displaying a Call-to-Action Component</p>
+        </Link>
+        <Link to="/error-message" className="project-card">
+          <h2>Error Message</h2>
+          <p>Displaying an Error Message Component</p>
+        </Link>
       </div>
     </div>
   </div>
@@ -56,6 +64,8 @@ function App() {
             <Route path="/superhero-form" element={<SuperheroForm />} />
             <Route path="/currency-converter" element={<CurrencyConverter />} />
             <Route path="/tic-tac-toe" element={<Board />} />
+            <Route path="/cta" element={<CTAComponent />} />
+            <Route path="/error-message" element={<ErrorMessage />} />
           </Routes>
         </main>
         <footer className="app-footer"></footer>
