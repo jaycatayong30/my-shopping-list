@@ -5,69 +5,59 @@
     <title>Music Shopping Cart Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-
   <body class="bg-green-900">
-    <h1 class="mt-8 mb-12 text-white text-center text-3xl md:text-5xl font-semibold text-gray-900">
+    <h1 class="mt-8 mb-12 text-white text-center text-3xl md:text-5xl font-semibold">
       Shopping Cart Page
     </h1>
+
     <div
-      id="shopping-cart"
-      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+      id="shopping-cart-container"
+      class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto p-6"
     >
-      <div class="max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl scale-105">
-        <div>
-          <p>Ludwig Supraphonic Snare Drum Chrome</p>
-          <a href="#">-</a>
-          <span>2</span>
-          <a href="#">+</a>
-          <p>$1398.00</p>
-          <a href="#">Remove</a>
+      <div id="products-container" class="flex-1 space-y-6">
+        <div class="card max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl">
+          <h2 class="text-lg">Ludwig Supraphonic Snare Drum Chrome</h2>
+          <button>-</button>
+          <span class="quantity">2</span>
+          <button>+</button>
+          <p>
+            $<span class="price">1398.00</span>
+          </p>
+          <button class="remove-button bg-red-500 hover:bg-red-600 rounded py-2 px-4">
+            Remove
+          </button>
+        </div>
+
+        <div class="card max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl">
+          <h2 class="text-lg">Shure SM58S Mic With Switch Standard</h2>
+          <button>-</button>
+          <span class="quantity">1</span>
+          <button>+</button>
+          <p>
+            $<span class="price">119.00</span>
+          </p>
+          <button class="remove-button bg-red-500 hover:bg-red-600 rounded py-2 px-4">
+            Remove
+          </button>
         </div>
       </div>
-      <div>
-        <div>
-          <p>Shure SM58S Mic With Switch Standard</p>
-          <a href="#">-</a>
-          <span>1</span>
-          <a href="#">+</a>
-          <p>$119.00</p>
-          <a href="#">Remove</a>
-        </div>
-      </div>
-      <div>
-        <div>
-          <p>Fender American Professional II Stratocaster</p>
-          <a href="#">-</a>
-          <span>1</span>
-          <a href="#">+</a>
-          <p>$1700.00</p>
-          <a href="#">Remove</a>
-        </div>
-      </div>
-      <div>
-        <div>
-          <p>Moog Subsequent 37 Analog Synthesizer</p>
-          <a href="#">-</a>
-          <span>2</span>
-          <a href="#">+</a>
-          <p>$1799.00</p>
-          <a href="#">Remove</a>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <h1>Order Summary</h1>
-        <p>
-          Subtotal:<span>$5,016.00</span>
+
+      <div
+        id="order-summary-container"
+        class="rounded-lg border-2 border-white p-6 h-fit bg-green-800 text-white lg:w-1/3"
+      >
+        <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+        <p class="mb-4">
+          Shipping: <span>Calculated in checkout</span>
         </p>
-        <p>
-          Shipping:<span>Calculated in checkout</span>
+        <p id="total" class="text-2xl font-bold mb-6">Total:<p id="total-amount">2915.00</p>
         </p>
-        <p>
-          Total:<span>$5,016.00</span>
-        </p>
-        <a href="#">Checkout</a>
+        <a
+          href="#"
+          class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded font-semibold"
+        >
+          Checkout
+        </a>
       </div>
     </div>
   </body>
