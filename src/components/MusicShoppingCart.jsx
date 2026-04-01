@@ -14,7 +14,7 @@
       id="shopping-cart-container"
       class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto p-6"
     >
-      <div id="products-container" class="flex-1 space-y-6">
+      <div id="products-container" class="flex-1 space-y-6 overflow-y-auto">
         <div class="card max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl">
           <h2 class="text-lg">Ludwig Supraphonic Snare Drum Chrome</h2>
           <button>-</button>
@@ -28,7 +28,7 @@
           </button>
         </div>
 
-        <div class="card max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl">
+        <div class="card max-w-6xl mx-auto text-center relative bg-green-700 text-white ring-2 ring-white p-8 grid grid-rows-[1fr_auto] gap-6 rounded-xl overflow-y-auto">
           <h2 class="text-lg">Shure SM58S Mic With Switch Standard</h2>
           <button>-</button>
           <span class="quantity">1</span>
@@ -44,7 +44,7 @@
 
       <div
         id="order-summary-container"
-        class="rounded-lg border-2 border-white p-6 h-fit bg-green-800 text-white lg:w-1/3"
+        class="rounded-lg border-2 border-white p-6 h-fit bg-green-800 text-white lg:w-1/3 overflow-y-auto"
       >
         <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
         <p class="mb-4">
